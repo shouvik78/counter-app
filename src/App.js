@@ -12,7 +12,7 @@ export default class App extends Component {
       { id: 4, value: 0 },
     ],
   };
-
+  //for reset
   handleReset = () => {
     const counters = this.state.counters.map((a) => {
       console.log(a);
@@ -50,7 +50,6 @@ export default class App extends Component {
     // this.setState({ value: this.state.value + 1 });
   };
 
-
   handleDelete = (id) => {
     console.log("Event handler delete call", id);
     const counters = this.state.counters.filter((a) => a.id !== id);
@@ -61,7 +60,9 @@ export default class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar totalCounters={this.state.counters.filter(c => c.value>0).length} />
+        <Navbar
+          totalCounters={this.state.counters.filter((c) => c.value > 0).length}
+        />
         <main className="container mt-2">
           <Counters
             counters={this.state.counters}
